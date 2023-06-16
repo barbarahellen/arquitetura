@@ -8,5 +8,3 @@ a 20 (chave). Ou seja, o processo de criptografia consiste em somar o valor da c
 valor da chave de cada um dos bytes de um arquivo.</p>
 
 * O programa foi implementado utilizando a linguagem Assembly no Windows (MASM32).<br>
-
-![image](https://github.com/barbarahellen/cifra-de-cesar/assets/91560661/1a1e2d31-8c19-4dad-b497-e719b93f8931)
