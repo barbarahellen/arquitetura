@@ -1,5 +1,3 @@
-; Bárbara Hellen Padilha da Silva
-
 .686
 .model flat, stdcall
 option casemap:none
@@ -36,7 +34,7 @@ includelib \masm32\lib\masm32.lib
     write_count       dd 0          ; armazena quantos bytes foram escritos
     read_count        dd 0          ; armazena quantos bytes foram lidos 
 
-    
+
 .code
 
 convert_enter:           ; funcao para converter o caractere ASCII CR em ASCII 0
@@ -44,7 +42,7 @@ convert_enter:           ; funcao para converter o caractere ASCII CR em ASCII 0
     push ebp
     mov ebp, esp
 
-    mov esi, [ebp+8]     ; acessa o primeiro argumento passado para a função
+    mov esi, [ebp+8]     ; acessa o primeiro argumento passado para a funÃ§Ã£o
 
     proximo:       
         mov al, [esi]    ; Mover caractere atual para al
@@ -118,7 +116,7 @@ opcao1:                  ; funcao que eh chamada quando o usuario escolhe a opca
 
 loop_read_write:         ; loop para ler e escrever os 512 bytes no arquivo  
 
-    invoke ReadFile, arq_input_handle, addr buffer, 512, addr read_count, NULL
+    invoke ReadFile, arq_input_handle, addr buffer, 1, addr read_count, NULL
     ; verifica se nao chegou ao fim do arquivo de entrada
     cmp read_count, 0
     ; se sim, pula para o fim da execucao do codigo
@@ -160,7 +158,7 @@ criptografar:
     ; coloca a chave em ebx
     mov ebx, DWORD PTR [ebp+16]
 
-    ; loop pra avancar esi e somar a chave até a quantidade de vezes igual ao segundo parametro
+    ; loop pra avancar esi e somar a chave atÃ© a quantidade de vezes igual ao segundo parametro
     loop_soma:
        mov al, [esi]
        add [esi], bl
@@ -179,7 +177,7 @@ opcao2:                     ; funcao que eh chamada quando o usuario escolhe a o
     
 loop_read_write2:           ; loop para ler e escrever os 512 bytes no arquivo  
     
-    invoke ReadFile, arq_input_handle, addr buffer, 512, addr read_count, NULL
+    invoke ReadFile, arq_input_handle, addr buffer, 1, addr read_count, NULL
     ; verifica se chegou ao fim do arquivo de entrada
     cmp read_count, 0
     ; se sim, pula para o fim da execucao do codigo
@@ -205,8 +203,7 @@ loop_read_write2:           ; loop para ler e escrever os 512 bytes no arquivo
 
     ; repete o loop 
     jmp loop_read_write2
-
-    
+  
 jmp fim
 
 descriptografar:
@@ -214,7 +211,7 @@ descriptografar:
     push ebp
     mov ebp, esp 
    
-    ; coloca endereço do array em esi
+    ; coloca endereÃ§o do array em esi
     mov esi, DWORD PTR [ebp+8]
  
     ; coloca a quantidade de bytes em edx
@@ -223,7 +220,7 @@ descriptografar:
     ; coloca a chave em ebx
     mov ebx, DWORD PTR [ebp+16]
 
-    ; loop pra avançar esi e subtrair a chave ate a quantidade de vezes igual ao segundo parametro
+    ; loop pra avanÃ§ar esi e subtrair a chave ate a quantidade de vezes igual ao segundo parametro
     loop_subtrai:
 
        mov al, [esi]
@@ -237,7 +234,6 @@ descriptografar:
      ret 12
   
 start:
-
     ; obtem o handle do console de entrada e saida padrao
     invoke GetStdHandle, STD_INPUT_HANDLE
     mov input_handle, eax
