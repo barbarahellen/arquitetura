@@ -116,7 +116,7 @@ opcao1:                  ; funcao que eh chamada quando o usuario escolhe a opca
 
 loop_read_write:         ; loop para ler e escrever os 512 bytes no arquivo  
 
-    invoke ReadFile, arq_input_handle, addr buffer, 1, addr read_count, NULL
+    invoke ReadFile, arq_input_handle, addr buffer, 512, addr read_count, NULL
     ; verifica se nao chegou ao fim do arquivo de entrada
     cmp read_count, 0
     ; se sim, pula para o fim da execucao do codigo
@@ -177,7 +177,7 @@ opcao2:                     ; funcao que eh chamada quando o usuario escolhe a o
     
 loop_read_write2:           ; loop para ler e escrever os 512 bytes no arquivo  
     
-    invoke ReadFile, arq_input_handle, addr buffer, 1, addr read_count, NULL
+    invoke ReadFile, arq_input_handle, addr buffer, 512, addr read_count, NULL
     ; verifica se chegou ao fim do arquivo de entrada
     cmp read_count, 0
     ; se sim, pula para o fim da execucao do codigo
