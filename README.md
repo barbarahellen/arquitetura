@@ -1,2 +1,2 @@
-# Arquitetura de Computadores I
-Repositório para armazenar os conteúdos da disciplina Arquitetura de Computadores I.
+# Arquitetura de Computadores 
+Repositório para armazenar os conteúdos das disciplinas Arquitetura de Computadores I e II.
